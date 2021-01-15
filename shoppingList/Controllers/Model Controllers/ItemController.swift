@@ -9,10 +9,12 @@ import Foundation
 
 class ItemController: Codable {
     
+    //MARK: - Properties
     static var shared = ItemController()
     
     var items: [Item] = []
     
+    //MARK: - CRUD
     func addItem(named: String){
         let newItem = Item(title: named)
         items.append(newItem)
@@ -28,6 +30,15 @@ class ItemController: Codable {
     func toggleHasBought(item: Item){
         item.hasBought.toggle()
         saveToPersistenceStore()
+    }
+    
+    func editAmount(forItemWithTitle: String, newValue: Int) {
+        for item in items {
+            if item.title == forItemWithTitle{
+                item.amount = newValue
+                saveToPersistenceStore()
+            }
+        }
     }
     
     //MARK:- Persistence functions

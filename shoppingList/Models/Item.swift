@@ -10,10 +10,12 @@ import Foundation
 class Item: Codable {
     let title: String
     var hasBought: Bool
+    var amount: Int
     
-    init(title: String, hasBought: Bool = false) {
+    init(title: String, hasBought: Bool = false, amount: Int = 1) {
         self.title = title
         self.hasBought = hasBought
+        self.amount = amount
     }
 }
 

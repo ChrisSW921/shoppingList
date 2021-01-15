@@ -16,6 +16,7 @@
 		FFE56CB625B1F560001EDDA6 /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE56CB525B1F560001EDDA6 /* ItemController.swift */; };
 		FFE56CBA25B1F744001EDDA6 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE56CB925B1F744001EDDA6 /* ItemTableViewCell.swift */; };
 		FFE56CBD25B1F7A9001EDDA6 /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE56CBC25B1F7A9001EDDA6 /* ItemTableViewController.swift */; };
+		FFE56CC025B211A6001EDDA6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE56CBF25B211A6001EDDA6 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FFE56CB525B1F560001EDDA6 /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
 		FFE56CB925B1F744001EDDA6 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		FFE56CBC25B1F7A9001EDDA6 /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		FFE56CBF25B211A6001EDDA6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				FFE56CBC25B1F7A9001EDDA6 /* ItemTableViewController.swift */,
+				FFE56CBF25B211A6001EDDA6 /* DetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				FFE56CB625B1F560001EDDA6 /* ItemController.swift in Sources */,
 				FFE56CBD25B1F7A9001EDDA6 /* ItemTableViewController.swift in Sources */,
 				FFE56C9325B1F426001EDDA6 /* SceneDelegate.swift in Sources */,
+				FFE56CC025B211A6001EDDA6 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,8 +9,13 @@ import UIKit
 
 class ItemTableViewController: UITableViewController {
 
+    
+    //MARK: - Properties
     var sections: [[Item]] = []
     
+    var selectedItem: Item?
+    
+    //MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         ItemController.shared.loadFromPersistenceStore()
@@ -19,6 +24,12 @@ class ItemTableViewController: UITableViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setUpSections()
+    }
+    
+    
+    //MARK: - Actions
     @IBAction func addButtonTapped(_ sender: Any) {
         
         var itemTextField: UITextField?
@@ -45,6 +56,7 @@ class ItemTableViewController: UITableViewController {
         
     }
     
+    //MARK: - Helper functions
     func setUpSections(){
         sections = []
         let itemsBought = ItemController.shared.items.filter({$0.hasBought})
@@ -99,6 +111,22 @@ class ItemTableViewController: UITableViewController {
             setUpSections()
         }
     }
+    
+    //MARK: - Navigation Function
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedItem = sections[indexPath.section][indexPath.row]
+        performSegue(withIdentifier: "goToItem", sender: self)
+    }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToItem" {
+         let destination = segue.destination as? DetailViewController
+         destination?.item = selectedItem
+        }
+    }
+    
+    
 }
 
 extension ItemTableViewController: ItemTappedDelegate{

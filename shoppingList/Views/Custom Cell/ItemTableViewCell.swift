@@ -13,10 +13,12 @@ protocol ItemTappedDelegate: AnyObject {
 
 class ItemTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var checkMarkButton: UIButton!
     
+    //MARK: - Outlets
+    @IBOutlet weak var checkMarkButton: UIButton!
     @IBOutlet weak var itemLabel: UILabel!
     
+    //MARK: - Properties
     var item: Item? {
         didSet{
             updateView()
@@ -25,19 +27,22 @@ class ItemTableViewCell: UITableViewCell {
     
     var delegate: ItemTappedDelegate?
     
+    //MARK: - Actions
     @IBAction func checkButtonTapped(_ sender: Any) {
         delegate?.itemWasTapped(self)
     }
     
+    //MARK: - Helper functions
     func updateView(){
         guard let currentItem = item else{return}
-        itemLabel.text = currentItem.title
+        itemLabel.text = "\(currentItem.title) - \(currentItem.amount)"
         if currentItem.hasBought {
             checkMarkButton.setBackgroundImage(UIImage(named: "complete"), for: .normal)
         }else{
             checkMarkButton.setBackgroundImage(UIImage(named: "incomplete"), for: .normal)
         }
     }
+    
     
     
 }
